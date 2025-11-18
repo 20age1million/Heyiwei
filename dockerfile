@@ -27,8 +27,7 @@ COPY . .
 RUN mkdir -p dist \
   && cp index.html dist/index.html \
   && npx tsc src/main.ts --target ES2015 --lib ES2015,DOM --outDir dist \
-  && mv dist/src/main.js dist/main.js \
-  && rm -rf dist/src
+  && if [ -f dist/src/main.js ]; then mv dist/src/main.js dist/main.js && rm -rf dist/src; fi
 
 
 ########## 2) Runtime stage (static file server) ##############################
