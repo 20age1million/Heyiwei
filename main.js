@@ -19,7 +19,7 @@ function deHeyiwei(str) {
     for (var _i = 0, str_2 = str; _i < str_2.length; _i++) {
         var char = str_2[_i];
         if (char !== '何' && char !== '意' && char !== '味') {
-            return '输入包含非何意味字符，无法解码';
+            return '何意味？';
         }
     }
     var chars = str.split('味');
