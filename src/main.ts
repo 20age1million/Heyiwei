@@ -18,6 +18,12 @@ function enHeyiwei(str: string): string {
 }
 
 function deHeyiwei(str: string): string {
+    for (const char of str) {
+        if (char !== '何' && char !== '意' && char !== '味') {
+            return '输入包含非何意味字符，无法解码';
+        }
+    }
+
     const chars = str.split('味');
     const result: string[] = [];
 

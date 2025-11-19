@@ -16,16 +16,16 @@ function enHeyiwei(str) {
     return result.join('味');
 }
 function deHeyiwei(str) {
-    for (const char of str) {
+    for (var _i = 0, str_2 = str; _i < str_2.length; _i++) {
+        var char = str_2[_i];
         if (char !== '何' && char !== '意' && char !== '味') {
             return '输入包含非何意味字符，无法解码';
         }
     }
-
     var chars = str.split('味');
     var result = [];
-    for (var _i = 0, chars_1 = chars; _i < chars_1.length; _i++) {
-        var heyiweiChar = chars_1[_i];
+    for (var _a = 0, chars_1 = chars; _a < chars_1.length; _a++) {
+        var heyiweiChar = chars_1[_a];
         var bin = heyiweiChar
             .split('')
             .map(function (char) { return (char === '何' ? '0' : '1'); })
